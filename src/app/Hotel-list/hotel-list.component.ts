@@ -30,4 +30,10 @@ export class hotelListComponent{
       imageUrl:'assets/imageHotels/hotel3.jpg'
     }
   ];
+
+  public showNouveau=false;
+  public afficher(): void{
+    this.showNouveau= !this.showNouveau;
+  }
+
 }

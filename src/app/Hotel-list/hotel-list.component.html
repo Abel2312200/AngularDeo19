@@ -1,13 +1,16 @@
 
 <div class="container">
   <h2>{{title}}</h2>
+  <button class="btn btn-primary " (click)="afficher()">
+    {{showNouveau ? "cacher" :"afficher "}} nouveau</button>
   <div *ngIf="hotels && hotels.length > 0"  class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let hotel of hotels">
       <div class="card h-100">
-        <img src="{{hotel.imageUrl}}" class="card-img-top" alt="...">
+        <img [src]="hotel.imageUrl" [title]="hotel.nomHotel" class="card-img-top" [alt]="hotel.nomHotel">
         <div class="card-body">
           <h5 class="card-title">{{hotel.nomHotel}}</h5>
           <p class="card-text">{{hotel.description}}</p>
+          <button *ngIf="showNouveau">Nouveau</button>
         </div>
       </div>
     </div>
