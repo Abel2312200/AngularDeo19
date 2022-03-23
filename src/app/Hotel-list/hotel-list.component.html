@@ -2,9 +2,9 @@
 <div class="container">
   <h2>{{title}}</h2>
   <button class="btn btn-primary " (click)="afficher()">
-    <span class="material-icons">
+     <!-- <span class="material-icons">
       {{showNouveau ? "visibility_off" : "visibility"}}
-    </span>
+    </span> a revoir -->
     {{showNouveau ? "cacher" : "afficher"}} Nouveau
   </button>
   <hr>
@@ -24,6 +24,7 @@
         <div class="card-body">
           <h5 class="card-title">{{hotel.nomHotel}}</h5>
           <p class="card-text">{{hotel.description}} </p>
+          <p class="card-text">pour {{hotel.price|currency:'EUR':'symbol'}} </p>
           <span *ngIf="showNouveau" class="badge bg-pill bg-info">Nouveau</span>
         </div>
       </div>
