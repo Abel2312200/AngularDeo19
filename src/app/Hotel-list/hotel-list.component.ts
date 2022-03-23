@@ -32,6 +32,8 @@ export class hotelListComponent{
   ];
 
   public showNouveau=false;
+  public hotelFilter="mot"
+
   public afficher(): void{
     this.showNouveau= !this.showNouveau;
   }
