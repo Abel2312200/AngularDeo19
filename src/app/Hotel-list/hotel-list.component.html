@@ -2,32 +2,30 @@
 <div class="container">
   <h2>{{title}}</h2>
   <button class="btn btn-primary " (click)="afficher()">
-     <!-- <span class="material-icons">
+     <!--span class="material-icons">
       {{showNouveau ? "visibility_off" : "visibility"}}
-    </span> a revoir -->
+    </span-->
     {{showNouveau ? "cacher" : "afficher"}} Nouveau
   </button>
   <hr>
 
   <div class="mb-3 row">
-    <label class="col-sm-4 col-form-label">Filtre actuel: {{hotelFilter}}</label>
+    <label  id = "filtre" class="col-sm-4 col-form-label">Filtre actuel: {{hotelFilter}}</label>
     <div class="col-sm-8">
-      <input type ="text" class="form-control" id="inputPassword" [(ngModel)]="hotelFilter">
+      <input type ="text" class="form-control" [(ngModel)]="hotelFilter">
       <!--<input type ="text" class="form-control" id="inputPassword" [ngModel]="hotelFilter" (ngModelChange)="hotelFilter=$event">-->
     </div>
   </div>
-
   <div *ngIf="hotels && hotels.length > 0"  class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let hotel of hotels">
+    <div class="col" *ngFor="let hotel of filteredHotels">
       <div class="card h-100">
         <img [src]="hotel.imageUrl" [title]="hotel.nomHotel" class="card-img-top" [alt]="hotel.nomHotel">
         <div class="card-body">
           <h5 class="card-title">{{hotel.nomHotel}}</h5>
           <p class="card-text">{{hotel.description}} </p>
-          <p class="card-text">pour {{hotel.price|currency:'EUR':'symbol'}} </p>
+          <p class="card-text">{{hotel.price|currency :'EUR':'symbol':'1.2-2':'fr'}} </p>
           <span *ngIf="showNouveau" class="badge bg-pill bg-info">Nouveau</span>
         </div>
       </div>
-    </div>
   </div>
 <div>
