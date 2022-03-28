@@ -6,15 +6,21 @@ import { AppComponent } from './app.component';
 import { hotelListComponent } from './Hotel-list/hotel-list.component';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { replaceComma } from './shared/pipes/replace-comma.pipes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { starRatingComponent } from './shared/Components/star-rating.component';
 registerLocaleData(localeFr, 'fr');
 @NgModule({
   declarations: [
     AppComponent,
-    hotelListComponent
+    hotelListComponent,
+    replaceComma,
+    starRatingComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

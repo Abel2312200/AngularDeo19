@@ -2,6 +2,7 @@
 <div class="container">
   <h2>{{title}}</h2>
   <button class="btn btn-primary " (click)="afficher()">
+
      <!--span class="material-icons">
       {{showNouveau ? "visibility_off" : "visibility"}}
     </span-->
@@ -13,7 +14,7 @@
     <label  id = "filtre" class="col-sm-4 col-form-label">Filtre actuel: {{hotelFilter}}</label>
     <div class="col-sm-8">
       <input type ="text" class="form-control" [(ngModel)]="hotelFilter">
-      <!--<input type ="text" class="form-control" id="inputPassword" [ngModel]="hotelFilter" (ngModelChange)="hotelFilter=$event">-->
+      <!--<input type ="text" class="form-control" [ngModel]="hotelFilter" (ngModelChange)="hotelFilter=$event">-->
     </div>
   </div>
   <div *ngIf="hotels && hotels.length > 0"  class="row row-cols-1 row-cols-md-3 g-4">
@@ -23,8 +24,9 @@
         <div class="card-body">
           <h5 class="card-title">{{hotel.nomHotel}}</h5>
           <p class="card-text">{{hotel.description}} </p>
-          <p class="card-text">{{hotel.price|currency :'EUR':'symbol':'1.2-2':'fr'}} </p>
+          <p class="card-text">{{hotel.price|currency :'EUR':'symbol':'1.2-2':'fr'|commaPipe}} </p>
           <span *ngIf="showNouveau" class="badge bg-pill bg-info">Nouveau</span>
+          <app-star-rating [rating]="hotel.rating"></app-star-rating>
         </div>
       </div>
   </div>

@@ -16,22 +16,35 @@ export class hotelListComponent implements OnInit{
       nomHotel:'Bassam hotel',
       description:'Bellle vuesur la mre',
       price:200,
-      imageUrl:'assets/imageHotels/hotel1.jpg'
+      imageUrl:'assets/imageHotels/hotel1.jpg',
+      rating :4
     },
     {
       idHotel : 2,
       nomHotel:'Bas lagunaire',
       description:'profite de la vie mon potre',
       price:200,
-      imageUrl:'assets/imageHotels/hotel2.jpeg'
+      imageUrl:'assets/imageHotels/hotel2.jpeg',
+      rating :3.5
     },
+
     {
-      idHotel : 1,
+      idHotel : 3,
       nomHotel:'Pardon Viens kiffer',
       description:'Certifié meilleur hotel depuis 2020',
       price:200,
-      imageUrl:'assets/imageHotels/hotel3.jpg'
+      imageUrl:'assets/imageHotels/hotel3.jpg',
+      rating :2
+    },
+    {
+      idHotel : 4,
+      nomHotel:'Pardon Viens kiffer',
+      description:'Certifié meilleur hotel depuis 2020',
+      price:200,
+      imageUrl:'assets/imageHotels/hotel3.jpg',
+      rating :1.5
     }
+
   ];
 
   // condition pour  afficher les badges
