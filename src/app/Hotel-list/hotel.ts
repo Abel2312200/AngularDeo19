@@ -3,6 +3,6 @@ export interface IHotel{
   nomHotel:string;
   description:string;
   price:number;
-  imageUrl:string
-  rating : number;
+  imageUrl:string,
+  rating : number
 }

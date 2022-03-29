@@ -17,7 +17,7 @@ export class hotelListComponent implements OnInit{
       description:'Bellle vuesur la mre',
       price:200,
       imageUrl:'assets/imageHotels/hotel1.jpg',
-      rating :4
+      rating:3
     },
     {
       idHotel : 2,
@@ -25,7 +25,7 @@ export class hotelListComponent implements OnInit{
       description:'profite de la vie mon potre',
       price:200,
       imageUrl:'assets/imageHotels/hotel2.jpeg',
-      rating :3.5
+      rating: 4.5
     },
 
     {
@@ -34,7 +34,7 @@ export class hotelListComponent implements OnInit{
       description:'Certifié meilleur hotel depuis 2020',
       price:200,
       imageUrl:'assets/imageHotels/hotel3.jpg',
-      rating :2
+      rating: 2
     },
     {
       idHotel : 4,
@@ -42,7 +42,7 @@ export class hotelListComponent implements OnInit{
       description:'Certifié meilleur hotel depuis 2020',
       price:200,
       imageUrl:'assets/imageHotels/hotel3.jpg',
-      rating :1.5
+      rating:1.5
     }
 
   ];
@@ -73,7 +73,6 @@ export class hotelListComponent implements OnInit{
 
   public set hotelFilter(info:string){
     this._hotelFilter=info;
-
     this.filteredHotels = this.hotelFilter ? this.filterHotels(this._hotelFilter) : this.hotels;
   }
   private filterHotels(mot:string):IHotel[]{
